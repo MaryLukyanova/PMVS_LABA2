@@ -1,10 +1,12 @@
 #!/bin/bash
 # pmvs laba 2
 
+source timelab2.config
+
 while [ true ] ;
 do
 	wget -q  www.tut.by -O index.html
 echo 'the current weather is'  
 grep '<span class="w-weather_temt">' index.html | grep -Eo '[+|-][0-9]+'
-	sleep  2
+	sleep  $sleeptime
 done
